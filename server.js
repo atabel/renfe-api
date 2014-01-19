@@ -1,4 +1,5 @@
 var express = require('express');
+var moment = require('moment-timezone');
 var renfe = require('./renfe-scraper');
 
 var app = express();
@@ -13,25 +14,12 @@ app.get('/zone/:zoneId/stations', function(req, res) {
     });
 });
 
-var twoDigits = function(num) {
-    return num < 10 ? '0' + num : num;
-};
-
-var today = function() {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = twoDigits(now.getMonth() + 1);
-    var day = twoDigits(now.getDate());
-
-    return '' + year + month + day;
-};
-
 app.get('/zone/:zoneId/trip/from/:origin/to/:destination', function(req, res) {
     var tripReq = {
         zone: req.params.zoneId,
         origin: req.params.origin,
         destination: req.params.destination,
-        date: req.query.date || today()
+        date: req.query.date || moment().tz('Europe/Madrid').format('YYYYMMDD')
     };
     renfe.getTrip(tripReq, function(routes) {
         res.json(routes);
@@ -41,8 +29,9 @@ app.get('/zone/:zoneId/trip/from/:origin/to/:destination', function(req, res) {
 app.get('/time', function(req, res) {
     var date = new Date();
     res.json({
-        today: date,
-        env: process.env.TZ
+        date: date,
+        env: process.env.TZ,
+        today: moment().tz('Europe/Madrid').format('YYYYMMDD HH:mm')
     });
 });
 
