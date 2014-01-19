@@ -1,0 +1,17 @@
+{
+  "name": "renfe",
+  "version": "0.1",
+  "description": "renfe cercanias scraper",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abel Toledano <atabel87@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "~2.33.0",
+    "cheerio": "~0.13.1",
+    "express": "~3.4.8",
+    "iconv": "~2.0.7"
+  }
+}

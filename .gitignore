@@ -1,0 +1,6 @@
+*~
+.project
+*.sublime-workspace
+*.sublime-project
+node_modules/
+*.directory
