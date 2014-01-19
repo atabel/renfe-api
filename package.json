@@ -1,6 +1,6 @@
 {
   "name": "renfe",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "renfe cercanias scraper",
   "main": "server.js",
   "scripts": {
