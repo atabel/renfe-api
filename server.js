@@ -15,10 +15,10 @@ app.get('/zone/:zoneId/stations', function(req, res) {
 
 app.get('/zone/:zoneId/trip/from/:origin/to/:destination', function(req, res) {
     var tripReq = {
-            zone: req.params.zoneId,
-            origin: req.params.origin,
-            destination: req.params.destination,
-            date: req.query.date
+        zone: req.params.zoneId,
+        origin: req.params.origin,
+        destination: req.params.destination,
+        date: req.query.date
     };
     renfe.getTrip(tripReq, function(routes) {
         res.json(routes);
