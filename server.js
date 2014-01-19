@@ -26,14 +26,6 @@ app.get('/zone/:zoneId/trip/from/:origin/to/:destination', function(req, res) {
     });
 });
 
-app.get('/time', function(req, res) {
-    var date = new Date();
-    res.json({
-        date: date,
-        env: process.env.TZ,
-        today: moment().tz('Europe/Madrid').format('YYYYMMDD HH:mm')
-    });
-});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
