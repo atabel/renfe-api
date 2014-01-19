@@ -40,7 +40,10 @@ app.get('/zone/:zoneId/trip/from/:origin/to/:destination', function(req, res) {
 
 app.get('/time', function(req, res) {
     var date = new Date();
-    res.json({today: date});
+    res.json({
+        today: date,
+        env: process.env.TZ
+    });
 });
 
 var port = process.env.PORT || 5000;
