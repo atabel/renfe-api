@@ -4,6 +4,13 @@ var renfe = require('./renfe-scraper');
 
 var app = express();
 
+// Allow CORS
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 app.get('/zones', function(req, res){
     res.json(renfe.zones);
 });
