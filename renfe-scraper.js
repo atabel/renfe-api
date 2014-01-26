@@ -131,7 +131,7 @@ var parseStations = function(body, callback) {
         var val = opt.attr('value');
         if (val !== '?') {
             stations.push({
-                'value': val,
+                'id': val,
                 'name': opt.text().trim()
             });
         }
