@@ -68,6 +68,23 @@ var request = function(options, callback) {
     });
 };
 
+var toHour = function(renfeHour) {
+    return renfeHour.replace(/^0/g, '').replace('.', ':');
+};
+
+var toTime = function(renfeTime) {
+    var groups = /(.*)\.(.*)/.exec(renfeTime),
+        hours = Number(groups[1]),
+        minutes = Number(groups[2]),
+        time = '';
+    if (hours) {
+        time = hours + 'h ';
+    }
+    if (minutes) {
+        time += minutes + 'min';
+    }
+    return time;
+};
 
 var parseTrip = function(body, callback) {
     var $ = cheerio.load(body);
@@ -82,9 +99,9 @@ var parseTrip = function(body, callback) {
         if (!isNaN(Number(start[0]))) {
             routes.push({
                 line: line,
-                start: start,
-                arrive: arrive,
-                time: time
+                start: toHour(start),
+                arrive: toHour(arrive),
+                time: toTime(time)
             });
         }
     });
