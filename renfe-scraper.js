@@ -74,16 +74,21 @@ var parseTrip = function(body, callback) {
     var rows = $('table tr');
     var routes = [];
     rows.each(function() {
-        var cols = $(this).find('td');
-        routes.push({
-            'line': $(cols[0]).text().trim(),
-            'start': $(cols[1]).text().trim(),
-            'arrive': $(cols[2]).text().trim(),
-            'time': $(cols[3]).text().trim()
-        });
+        var cols = $(this).find('td:not(.rojo3)'),
+            line =  $(cols[0]).text().trim(),
+            start = $(cols[1]).text().trim(),
+            arrive = $(cols[cols.length - 2]).text().trim(),
+            time = $(cols[cols.length - 1]).text().trim();
+        if (!isNaN(Number(start[0]))) {
+            routes.push({
+                line: line,
+                start: start,
+                arrive: arrive,
+                time: time
+            });
+        }
     });
-    //remove the first 2 rows (the head of the table)
-    callback(routes.slice(2));
+    callback(routes);
 };
 
 var createTripRequest = function(trip) {
