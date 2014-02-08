@@ -7,51 +7,63 @@ var BASE_STATIONS_URL = 'http://horarios.renfe.com/cer/hjcer300.jsp?CP=NO&I=s&NU
 var ZONES = [
     {
         id: '20',
-        name: 'Asturias'
+        name: 'Asturias',
+        map: 'http://www.renfe.com/img/mobi/planos/asturias.png'
     },
     {
         id: '50',
-        name: 'Barcelona'
+        name: 'Barcelona',
+        map: 'http://www.renfe.com/img/mobi/planos/barcelona.png'
     },
     {
         id: '60',
-        name: 'Bilbao'
+        name: 'Bilbao',
+        map: 'http://www.renfe.com/img/mobi/planos/bilbao.png'
     },
     {
         id: '31',
-        name: 'Cádiz'
+        name: 'Cádiz',
+        map: 'http://www.renfe.com/img/mobi/planos/cadiz.png'
     },
     {
         id: '10',
-        name: 'Madrid'
+        name: 'Madrid',
+        map: 'http://www.renfe.com/img/mobi/planos/madrid.png'
     },
     {
         id: '32',
-        name: 'Málaga'
+        name: 'Málaga',
+        map: 'http://www.renfe.com/img/mobi/planos/malaga.png'
     },
     {
         id: '41',
-        name: 'Múrcia/Alicante'
+        name: 'Múrcia/Alicante',
+        map: 'http://www.renfe.com/img/mobi/planos/murciaalicante.png'
     },
     {
         id: '62',
-        name: 'Santander'
+        name: 'Santander',
+        map: 'http://www.renfe.com/img/mobi/planos/santander.png'
     },
     {
         id: '61',
-        name: 'San Sebastián'
+        name: 'San Sebastián',
+        map: 'http://www.renfe.com/img/mobi/planos/sansebastian.png'
     },
     {
         id: '30',
-        name: 'Sevilla'
+        name: 'Sevilla',
+        map: 'http://www.renfe.com/img/mobi/planos/sevilla.png'
     },
     {
         id: '40',
-        name: 'Valencia'
+        name: 'Valencia',
+        map: 'http://www.renfe.com/img/mobi/planos/valencia.png'
     },
     {
         id: '70',
-        name: 'Zaragoza'
+        name: 'Zaragoza',
+        map: 'http://www.renfe.com/img/mobi/planos/zaragoza.png'
     }
 ];
 
