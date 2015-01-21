@@ -1,12 +1,12 @@
 {
   "name": "renfe",
   "version": "0.1.0",
-  "description": "renfe cercanias API",
+  "description": "renfe cercanias scraper",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Unai Esteibar <uesteibar@gmail.com>",
+  "author": "Abel Toledano <atabel87@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "request": "~2.33.0",
