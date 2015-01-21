@@ -1,4 +1,4 @@
 renfe-api
 =========
 
-A simple nodejs API and server of renfe cercanias services 
+A simple nodejs scraper and server of renfe cercanias services 
